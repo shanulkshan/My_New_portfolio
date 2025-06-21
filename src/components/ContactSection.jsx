@@ -40,6 +40,7 @@ export const ContactSection = () => {
           Have a project in mind or want to collaborate? Feel free to reach out.
           I'm always open to discussing new opportunities.
         </p>
+        <p>Hi bro</p>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           <div className="space-y-8">
