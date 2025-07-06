@@ -2,15 +2,15 @@ import { ArrowUp } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="py-12 px-4 bg-card relative border-t border-border mt-12 pt-8 flex flex-wrap justify-between items-center">
+    <footer className="relative flex flex-wrap items-center justify-between px-4 py-12 pt-8 mt-12 border-t bg-card border-border">
       {" "}
       <p className="text-sm text-muted-foreground">
         {" "}
-        &copy; {new Date().getFullYear()} Pedrotech.co. All rights reserved.
+        &copy; {new Date().getFullYear()} All rights reserved.
       </p>
       <a
         href="#hero"
-        className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
+        className="p-2 transition-colors rounded-full bg-primary/10 hover:bg-primary/20 text-primary"
       >
         <ArrowUp size={20} />
       </a>
