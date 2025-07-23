@@ -5,7 +5,7 @@ const projects = [
   {
     id: 1,
     title: "Shopping mall management system",
-    description: "This webapp is built using the MERN stack with an attractive UI. It is deployed on Vercel with a CI/CD pipeline built using Github actions. This webapp allows users to find shops in the shopping mall and view the items in them. Sellers can also create shops and add items to them. After creating a shop, the admin must approve them..",
+    description: "This webapp is built using the <span class='text-highlight font-semibold'>MERN</span> stack with an attractive UI. It is deployed on <span class='text-highlight font-semibold'>Vercel</span> with a <span class='text-highlight font-semibold'>CI/CD</span> pipeline built using <span class='text-highlight font-semibold'>Github Actions</span>. This webapp allows users to find shops in the shopping mall and view the items in them. Sellers can also create shops and add items to them. After creating a shop, the admin must approve them..",
     images: ["/projects/shopping_mall1.png","/projects/shopping_mall2.png","/projects/shopping_mall3.png", "/projects/shopping_mall4.png"],
     tags: ["React", "TailwindCSS", "GitHub Actions", "Node.js", "MongoDB"],
     demoUrl: "https://shopping-mall-dun.vercel.app/",
@@ -13,23 +13,26 @@ const projects = [
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "A simple Node.js application with Docker and jenkins CI/CD pipeline",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    images: ["/projects/project2.png"],
-    tags: ["TypeScript", "D3.js", "Next.js"],
+      `● <span class='text-highlight font-semibold'>Containerize</span> a Node.js application.\n
+● Set up automated CI/CD pipelines with <span class='text-highlight font-semibold'>Jenkins</span>.\n
+● Integrate with Docker Hub for image registry.\n
+● Use declarative pipeline syntax with proper error handling.`,
+    images: ["/projects/docker with jenkins.png"],
+    tags: ["Jenkins", "Docker", "Node.js"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/shanulkshan/Docker-and-Jenkins-CI-CD-Pipeline.git",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "Final year Research Project",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    images: ["/projects/project3.png"],
-    tags: ["React", "Node.js", "Stripe"],
+      "This is a mobile application designed to identify children with educational disabilities such as <span class='text-highlight font-semibold'>Dyslexia, Dysgraphia, Dyscalculia and ADHD</span> and to minimize the impact of these conditions. I created the section for <span class='text-highlight font-semibold'>Dyscalculia</span> in this application. A trained <span class='text-highlight font-semibold'>SVM</span> model is used to predict the risk of dyscalculia. Children are asked to engage in several mathematical activities and the nature of the answers given to them is used to predict the risk of dyscalculia. It also provides activities to enhance the skills of those children and monitors their progress.",
+    images: ["/projects/R1.jpg", "/projects/R2.jpg", "/projects/R3.jpg", "/projects/R4.jpg", "/projects/R5.jpg"],
+    tags: ["React Native", "Node.js", "Python", "Firebase"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/shanulkshan/Final-Research.git",
   },
 ];
 
@@ -176,9 +179,10 @@ const ProjectCard = ({ project }) => {
 
           <h3 className="mb-1 text-xl font-semibold">{project.title}</h3>
           <div className="mb-4">
-            <p className="text-sm text-muted-foreground">
-              {displayDescription}
-            </p>
+            <div 
+              className="text-sm whitespace-pre-line text-muted-foreground"
+              dangerouslySetInnerHTML={{ __html: displayDescription }}
+            />
             {shouldShowSeeMore && (
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
@@ -212,12 +216,12 @@ const ProjectCard = ({ project }) => {
       {/* Modal for expanded image view */}
       {isModalOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
           onClick={closeModal}
           onKeyDown={handleKeyDown}
           tabIndex={0}
         >
-          <div className="relative max-w-4xl max-h-[90vh] w-full mx-4">
+          <div className="relative flex items-center justify-center w-full h-full max-h-screen max-w-7xl">
             {/* Close button */}
             <button
               onClick={closeModal}
@@ -230,7 +234,11 @@ const ProjectCard = ({ project }) => {
             <img
               src={project.images[modalImageIndex]}
               alt={`${project.title} - Image ${modalImageIndex + 1}`}
-              className="object-contain w-full h-full rounded-lg"
+              className="object-contain max-w-full max-h-full rounded-lg"
+              style={{ 
+                maxHeight: 'calc(100vh - 80px)',
+                maxWidth: 'calc(100vw - 32px)'
+              }}
               onClick={(e) => e.stopPropagation()}
             />
 
@@ -243,7 +251,7 @@ const ProjectCard = ({ project }) => {
                     e.stopPropagation();
                     prevModalImage();
                   }}
-                  className="absolute p-2 text-white transition-all duration-300 -translate-y-1/2 rounded-full left-4 top-1/2 bg-black/50 hover:bg-black/70"
+                  className="absolute z-10 p-2 text-white transition-all duration-300 -translate-y-1/2 rounded-full left-4 md:left-8 top-1/2 bg-black/50 hover:bg-black/70"
                 >
                   <ChevronLeft size={24} />
                 </button>
@@ -252,13 +260,13 @@ const ProjectCard = ({ project }) => {
                     e.stopPropagation();
                     nextModalImage();
                   }}
-                  className="absolute p-2 text-white transition-all duration-300 -translate-y-1/2 rounded-full right-4 top-1/2 bg-black/50 hover:bg-black/70"
+                  className="absolute z-10 p-2 text-white transition-all duration-300 -translate-y-1/2 rounded-full right-4 md:right-8 top-1/2 bg-black/50 hover:bg-black/70"
                 >
                   <ChevronRight size={24} />
                 </button>
 
                 {/* Modal Dots indicator */}
-                <div className="absolute flex gap-2 -translate-x-1/2 bottom-4 left-1/2">
+                <div className="absolute z-10 flex gap-2 -translate-x-1/2 bottom-4 md:bottom-8 left-1/2">
                   {project.images.map((_, index) => (
                     <button
                       key={index}
@@ -279,7 +287,7 @@ const ProjectCard = ({ project }) => {
 
             {/* Image counter */}
             {project.images.length > 1 && (
-              <div className="absolute px-3 py-1 text-sm text-white rounded-full top-4 left-4 bg-black/50">
+              <div className="absolute z-10 px-3 py-1 text-sm text-white rounded-full top-4 left-4 md:top-8 md:left-8 bg-black/50">
                 {modalImageIndex + 1} / {project.images.length}
               </div>
             )}
