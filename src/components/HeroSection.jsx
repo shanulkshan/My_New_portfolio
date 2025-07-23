@@ -52,7 +52,7 @@ export const HeroSection = () => {
 
   return (
     <section
-      id="hero"
+      id="home"
       className="relative flex flex-col items-center justify-center min-h-screen px-4"
     >
       {/* Main content container */}
