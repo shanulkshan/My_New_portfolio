@@ -9,8 +9,8 @@ export const HeroSection = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [showFinal, setShowFinal] = useState(false);
 
-  const roles = ["Software Engineer", "Web Developer", "DevOps Engineer"];
-  const finalText = "Software Engineer || Web Developer || DevOps Engineer";
+  const roles = ["Software Engineer", "Web Developer", "DevOps Enthusiast"];
+  const finalText = "Software Engineer || Web Developer || DevOps Enthusiast";
 
   useEffect(() => {
     if (showFinal) {

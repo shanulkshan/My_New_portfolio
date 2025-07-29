@@ -16,16 +16,21 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              With over 3 years of experience in web development, I specialize
-              in creating responsive, accessible, and performant web
-              applications using modern technologies.
+              I am a fourth year undergraduate student who has completed
+              my <span class='text-highlight font-semibold'>B.Sc(Hons) Information Technology specialization in information technology </span> 
+              degree at the Sri Lanka Institute of Information Technology 
+              and is looking forward to graduating.
             </p>
 
             <p className="text-muted-foreground">
-              I'm passionate about creating elegant solutions to complex
-              problems, and I'm constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving web
-              landscape.
+              I have <span class='text-highlight font-semibold'>over two years</span> of experience in web application development and
+              have also completed a <span class='text-highlight font-semibold'>6-month internship as a Full-Stack web developer</span>.
+            </p>
+
+            <p className="text-muted-foreground">
+              In addition, I am passionate about <span class='text-highlight font-semibold'>DevOps</span> and have a keen interest
+              in the tools and technologies associated with it.
+              I also have hands-on experience in their use.
             </p>
 
             <div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row">
@@ -62,13 +67,24 @@ export const AboutSection = () => {
             <div className="p-6 gradient-border card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <User className="w-6 h-6 text-primary" />
+                  {/* Custom SVG for Software Engineering */}
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M7 7h.01M7 11h.01M7 15h.01M11 7h6M11 11h6M11 15h6" />
+                  </svg>
                 </div>
                 <div className="text-left">
-                  <h4 className="text-lg font-semibold">UI/UX Design</h4>
+                  <h4 className="text-lg font-semibold">Software Engineering</h4>
                   <p className="text-muted-foreground">
-                    Designing intuitive user interfaces and seamless user
-                    experiences.
+                    Builds responsive websites and dynamic web apps and mobile apps using modern frameworks.
+                     Focused on clean design, fast performance, and seamless user experience.
+
                   </p>
                 </div>
               </div>
@@ -76,14 +92,23 @@ export const AboutSection = () => {
             <div className="p-6 gradient-border card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <Briefcase className="w-6 h-6 text-primary" />
+                  {/* Infinity SVG for DevOps */}
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M17.5 8c-2 0-4 2-5.5 4s-3.5 4-5.5 4C3.57 16 2 14.43 2 12.5S3.57 9 5.5 9c2 0 4 2 5.5 4s3.5 4 5.5 4c1.93 0 3.5-1.57 3.5-3.5S19.43 8 17.5 8z" />
+                  </svg>
                 </div>
 
                 <div className="text-left">
-                  <h4 className="text-lg font-semibold">Project Management</h4>
+                  <h4 className="text-lg font-semibold">DevOps Enthusiast</h4>
                   <p className="text-muted-foreground">
-                    Leading projects from conception to completion with agile
-                    methodologies.
+                    Streamlines development and operations using CI/CD, containerization, and cloud tools. Focused on automation, scalability, and faster delivery cycles.
+
                   </p>
                 </div>
               </div>
