@@ -7,7 +7,9 @@ import { SkillsSection } from "../components/SkillsSection";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
+import { Certificates } from "../components/Licenses";
 import { Photo } from "../components/Photo";
+import { i } from "framer-motion/client";
 
 export const Home = () => {
   return (
@@ -24,6 +26,7 @@ export const Home = () => {
         {/* <Photo /> */}
         <HeroSection />
         <AboutSection />
+        <Certificates />
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
